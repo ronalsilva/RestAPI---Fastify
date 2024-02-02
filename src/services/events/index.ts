@@ -10,6 +10,7 @@ export async function getEvents(country:string) {
         // Exemplo: Obtendo todos os eventos nos Estados Unidos
         const allEventsResponse = await ticketmasterAPI.getAllEventsIn(country);
 
+        console.log(allEventsResponse.data._embedded.events)
         return allEventsResponse.data._embedded.events;
     } catch (err:any) {
         return 500

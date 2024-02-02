@@ -1,32 +1,15 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
-// import { CreateProductInput } from "../../schemas/product";
 import { createProduct, getProducts } from "../../services/product";
+import { ResponseProductRoutes, RequestProductRoutes } from './schema/productSchema'
 async function productRoutes(server: FastifyInstance) {
 	server.post(
 		"/",
 		{
 			preHandler: [server.authenticate],
 			schema: {
-				body: {
-					type: 'object',
-					properties: {
-						title: { type: 'string' },
-						price: { type: 'number' },
-						content: { type: 'string' },
-					}
-				},
+				body: RequestProductRoutes,
 				response: {
-					201: {
-						type: 'object',
-						properties: {
-							title: { type: 'string' },
-							price: { type: 'number' },
-							content: { type: 'string' },
-							id: { type: 'number' },
-							createdAt: { type: 'number' },
-							updatedAt: { type: 'number' },
-						}
-					}
+					201: ResponseProductRoutes
 				},
 			},
 		},
@@ -48,26 +31,9 @@ async function productRoutes(server: FastifyInstance) {
 		"/",
 		{
 			schema: {
-				body: {
-					type: 'object',
-					properties: {
-						title: { type: 'string' },
-						price: { type: 'number' },
-						content: { type: 'string' },
-					}
-				},
+				body: RequestProductRoutes,
 				response: {
-					201: {
-						type: 'object',
-						properties: {
-							title: { type: 'string' },
-							price: { type: 'number' },
-							content: { type: 'string' },
-							id: { type: 'number' },
-							createdAt: { type: 'number' },
-							updatedAt: { type: 'number' },
-						}
-					}
+					201: ResponseProductRoutes
 				},
 			},
 		},

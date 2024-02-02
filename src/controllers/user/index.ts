@@ -1,30 +1,16 @@
 import { FastifyInstance, FastifyRequest, FastifyReply } from "fastify";
-// import {
-//   loginHandler,
-//   registerUserHandler,
-//   getUsersHandler,
-// } from "../../controllers/user";
-// import { $ref } from "../../schemas/user";
-// import { CreateUserInput, LoginInput } from "../../schemas/user";
 import { createUser, findUserByEmail, findUsers } from "../../services/user";
 import { verifyPassword } from "../../utils/hash";
+import { ResponseUser, RequestUser, RequestUserLogin } from './schema/userSchema'
 
 async function userRoutes(server: FastifyInstance) {
 	server.post(
 		"/",
 		{
 			schema: {
-				body: {
-					email: { type: 'string'},
-					password: { type: 'string'},
-					name: { type: 'string'},
-				},
+				body: RequestUser,
 				response: {
-					201: {
-						id: { type: 'number'},
-						email: { type: 'string'},
-						name: { type: 'string'},
-					},
+					201: ResponseUser,
 				},
 			},
 		},
@@ -46,10 +32,7 @@ async function userRoutes(server: FastifyInstance) {
 		"/login",
 		{
 			schema: {
-				body: {
-					email: { type: 'string'},
-					password: { type: 'string'}
-				},
+				body: RequestUserLogin,
 				response: {
 					200: { accessToken: { type: 'string'} },
 				},
