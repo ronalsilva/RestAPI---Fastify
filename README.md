@@ -1,9 +1,20 @@
-# Descrição
-Este é um projeto de APIs REST baseado em Fastify, Prisma, PostgreSQL, Swagger, TypeScript, Docker e Jest. O objetivo é fornecer uma estrutura sólida para o desenvolvimento de APIs escaláveis e de fácil manutenção.
+# Description
+This is a REST APIs project based on Fastify, Prisma, PostgreSQL, Swagger, TypeScript, Docker and Jest. The aim is to provide a solid framework for developing scalable and maintainable APIs. *I created a few more APIs for test use, with authentication*.
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+I choose to implement a database as a test, and use prism to facilitate communication with the database.
 
-## Arquitetura
+
+| Plugin |
+| ------ |
+| Fastify |
+| Prisma |
+| Docker |
+| Jest |
+| TypeScript | 
+| node ts cache |
+
+
+## Architecture
 
 - src
 - - controllers
@@ -17,29 +28,65 @@ Este é um projeto de APIs REST baseado em Fastify, Prisma, PostgreSQL, Swagger,
 - - server.ts
 - - app.ts
 
+This was the architecture chosen, but it can be changed to 'module architecture', for example:
 
-## Pré-requisitos
+- src
+- - models
+- - - Events
+- - - - events.controller.ts
+- - - - events.service.ts
+- - - - events.schema.ts
+- - - Users
+- - - - ssers.controller.ts
+- - - - ssers.service.ts
+- - - - ssers.schema.ts
+- - utils
+- - integration
+- - server.ts
+- - app.ts
 
-Certifique-se de ter o Node.js, Docker instalados no seu sistema.
 
-## Instalação
+## Prerequisites
+
+Make sure you have Node.js, Docker installed on your system.
+
+## Installation
 
 ```sh
 npm install
 docker-compose up -d
-npx prisma db push (caso nao tenha o prisma instalado, rodar o comando - npm install @prisma/client)
+npx prisma db push (if you don't have prisma installed, run the command - npm install @prisma/client)
 ```
 
-### Rodar o projeto
+### Running the project
 
 ```sh
-.vscode configurado, pode rodar precisonando o F5, o projeto iria realizar o build.
+.vscode configured, it can run by pressing F5, the project would perform the build and run after the build is generated.
+```
+
+or
+
+
+```sh
 npm run dev
+```
+
+## Unit test - Jest
+
+```sh
+npm run test
+```
+
+## Build and start
+
+```sh
 npm run build
 npm run start
 ```
 
-Abrir a URL para rodar o swagger - http://localhost:3000/docs
+## Swagger
+
+After starting the project, you can open the swagger on the route - http://localhost:3000/docs
 
 ## ENV
 

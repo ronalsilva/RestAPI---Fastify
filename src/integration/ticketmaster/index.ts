@@ -25,7 +25,7 @@ export class TicketmasterAPI {
     }
 
     async getEventsForAdeleInCanada(): Promise<AxiosResponse> {
-        const attractionId = 'K8vZ917Gku7'; // Replace with the actual attractionId for Adele
+        const attractionId = 'K8vZ917Gku7';
         const url = `${this.baseUrl}events.json?attractionId=${attractionId}&countryCode=CA&apikey=${this.apiKey}`;
         return axios.get(url);
     }
