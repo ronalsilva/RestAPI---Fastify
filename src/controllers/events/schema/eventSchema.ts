@@ -1,5 +1,3 @@
-import { object } from "zod"
-
 export const ResponseEventSchema = {
     type: 'array',
     items: {

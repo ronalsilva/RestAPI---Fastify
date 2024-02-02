@@ -6,7 +6,7 @@ async function eventsRoutes(server: FastifyInstance) {
 		"/events/:country",
 		{
 			schema: {
-                params: { country: { type: 'string' } },
+                params: RequestEventSchema,
                 response: {
                     200: ResponseEventSchema
                 },

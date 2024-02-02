@@ -1,7 +1,6 @@
 import { createUser, findUserByEmail, findUsers } from './';
 import prisma from '../../utils/prisma';
 
-// Mockar o objeto prisma para evitar chamadas reais ao banco de dados
 jest.mock('../../utils/prisma', () => ({
     user: {
         create: jest.fn(),
@@ -41,7 +40,6 @@ describe('findUsers function', () => {
         const mockUsers:any = [
             { id: 1, name: 'User1', email: 'user1@example.com' },
             { id: 2, name: 'User2', email: 'user2@example.com' },
-            // Add more mock users as needed
         ];
         jest.spyOn(prisma.user, 'findMany').mockResolvedValue(mockUsers);
 

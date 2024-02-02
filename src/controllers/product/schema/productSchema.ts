@@ -1,5 +1,3 @@
-import { object } from "zod"
-
 export const ResponseProductRoutes = {
     type: 'object',
     properties: {

@@ -1,7 +1,6 @@
 import { createProduct, getProducts } from './';
 import prisma from '../../utils/prisma';
 
-// Mockar o objeto prisma para evitar chamadas reais ao banco de dados
 jest.mock('../../utils/prisma', () => ({
     product: {
         create: jest.fn(),
@@ -19,7 +18,6 @@ describe('createProduct function', () => {
 
 describe('getProducts function', () => {
     it('should get a list of products with owner information', async () => {
-        // Mockar a resposta da função findMany do prisma
         const mockProducts:any = [
             {
                 id: 1,
@@ -33,7 +31,6 @@ describe('getProducts function', () => {
                     name: 'OwnerName',
                 },
             },
-            // Adicione mais objetos de produto conforme necessário
         ];
 
         jest.spyOn(prisma.product, 'findMany').mockResolvedValue(mockProducts);

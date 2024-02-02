@@ -1,5 +1,4 @@
 import prisma from "../../utils/prisma";
-// import { CreateProductInput } from "../../schemas/product";
 
 export async function createProduct(data: any & { ownerId: number }) {
 	return prisma.product.create({

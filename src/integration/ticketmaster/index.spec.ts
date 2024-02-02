@@ -1,11 +1,10 @@
 import axios from 'axios';
 import { TicketmasterAPI } from './';
 
-// Mockar a biblioteca axios
 jest.mock('axios');
 
 describe('TicketmasterAPI class', () => {
-    const apiKey = 'your_api_key'; // Substitua com sua chave real
+    const apiKey = 'your_api_key';
     const ticketmasterAPI = new TicketmasterAPI(apiKey);
 
     afterEach(() => {

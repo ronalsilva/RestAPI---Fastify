@@ -5,8 +5,6 @@ import { withRefResolver } from "fastify-zod";
 import userRoutes from "./controllers/user";
 import productRoutes from "./controllers/product";
 import eventsRoutes from "./controllers/events";
-// import { userSchemas } from "./schemas/user";
-// import { productSchemas } from "./schemas/product";
 
 declare module "fastify" {
   interface FastifyRequest {
@@ -53,10 +51,6 @@ function buildServer() {
     req.jwt = server.jwt;
     return next();
   });
-
-  // for (const schema of [...userSchemas, ...productSchemas]) {
-  //   server.addSchema(schema);
-  // }
 
   server.register(
     swagger,
