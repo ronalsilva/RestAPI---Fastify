@@ -5,17 +5,17 @@ Este é um projeto de APIs REST baseado em Fastify, Prisma, PostgreSQL, Swagger,
 
 ## Arquitetura
 
-src
------- controllers
------ |---- Events
------ |---- Users
------- services
------ |---- Events
------ |---- Users
------- utils
------- integration
------- index.ts
------- app.ts
+- src
+- - controllers
+- - - Events
+- - - Users
+- - services
+- - - Events
+- - - Users
+- - utils
+- - integration
+- - server.ts
+- - app.ts
 
 - src: O diretório principal do código-fonte.
 - controllers: Contém pastas para cada controlador.
