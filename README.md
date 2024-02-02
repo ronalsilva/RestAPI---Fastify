@@ -17,14 +17,6 @@ Este é um projeto de APIs REST baseado em Fastify, Prisma, PostgreSQL, Swagger,
 - - server.ts
 - - app.ts
 
-- src: O diretório principal do código-fonte.
-- controllers: Contém pastas para cada controlador.
-- services: Contém pastas para cada serviço.
-- utils: Utilitários compartilhados.
-- schemas: Definições de esquemas de dados.
-- integration: Testes de integração.
-- index.ts: Ponto de entrada do aplicativo.
-- app.ts: Configuração do aplicativo Fastify.
 
 ## Pré-requisitos
 
